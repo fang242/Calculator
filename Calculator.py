@@ -9,21 +9,20 @@ def capture_input():
     return op, x, y
 
 def calculate(op, x, y):
-    while True:
-        match op:
-            case "1":
-                return float(x) + float(y)
-            case "2":
-                return float(x) -float(y)
-            case "3":
-                return float(x)*float(y)
-            case "4":
-                return float(x)/float(y)
-            case _:
-                print("Wrong Operation Input")
-                global op1, x1, y1
-                op1, x1, y1 = capture_input()
-                return calculate(op1,x1,y1)
+    match op:
+        case "1":
+            return float(x) + float(y)
+        case "2":
+            return float(x) -float(y)
+        case "3":
+            return float(x)*float(y)
+        case "4":
+            return float(x)/float(y)
+        case _:
+            print("Wrong Operation Input")
+            global op1, x1, y1
+            op1, x1, y1 = capture_input()
+            return calculate(op1,x1,y1)
 
 def print_output(op, x, y, result):
     print("Result: ")
